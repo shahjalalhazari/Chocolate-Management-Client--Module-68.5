@@ -1,13 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./components/pages/Home.jsx";
+import App from "./App";
+import AddChocolate from "./components/pages/AddChocolate";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/add-chocolate",
+        element: <AddChocolate />,
+      },
+    ],
   },
 ]);
 
